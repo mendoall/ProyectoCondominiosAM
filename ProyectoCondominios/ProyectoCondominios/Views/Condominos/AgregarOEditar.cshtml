@@ -1,0 +1,82 @@
+﻿@using ProyectoCondominios.Models
+@model Condominos
+@{
+    ViewData["Title"] = "Agregar o Editar";
+}
+
+@using (Html.BeginForm("Guardar", "Condominos", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="text-center">
+        <div class="row col-12">
+            @if (Model.Id == null)
+            {
+                <h4>Agregar Condóminos</h4>
+            }
+            else
+            {
+                <h4>Editar Condóminos</h4>
+            }
+        </div>
+    </div>
+    @Html.HiddenFor(m => m.Id)
+    @Html.HiddenFor(m => m.Foto)
+    <div class="row">
+        <label style="float: left;">Cédula:</label>
+        @Html.TextBoxFor(m => m.Cedula, null, new { @class = "form-control col-md-6", placeholder="Cédula", style="float: right;"})
+    </div>
+    <div class="row">
+        <label style="float: left;">Nombre:</label>
+        @Html.TextBoxFor(m => m.Nombre,  null, new { @class = "form-control", placeholder="Nombre", style="float: right;"})
+    </div>
+    <div class="row">
+        <label style="float: left;">Teléfonos:</label>
+        @Html.TextBoxFor(m => m.Telefonos,  null, new { @class = "form-control col-md-6", placeholder="Teléfonos", style="float: right;"})
+    </div>
+    <div class="row">
+        <label style="float: left;">Email:</label>
+        @Html.TextBoxFor(m => m.Email,  null, new { @class = "form-control col-md-6", placeholder="Email", style="float: right;"})
+    </div>
+    <div class="row">
+        <label>Foto:</label>
+    </div>
+    <div>
+        @{
+            string etiquetaFoto = string.Empty;
+            if (Model.Id == null)
+            {
+                etiquetaFoto = "Agregar foto";
+            }
+            else
+            {
+                etiquetaFoto = "Actualizar foto";
+            }
+            <input class="form-control"
+               value="@etiquetaFoto"
+               asp-for="Archivo" />
+
+            if (Model.Foto != null)
+            {
+                var base64foto = Convert.ToBase64String(Model.Foto);
+                var foto = String.Format("data:image/png;base64,{0}", base64foto);
+                <br />
+                <img src="@foto" style="width:200px; height:200px"/>
+            }
+        }
+    </div>
+    <br />
+    <div class="row">
+        @{
+            string etiqueta = string.Empty;
+
+            if (Model.Id == null)
+            {
+                etiqueta = "Crear";
+            }
+            else
+            {
+                etiqueta = "Guardar";
+            }
+        }
+        <input type="submit" class="btn btn-success" value="@etiqueta" />
+    </div>
+}

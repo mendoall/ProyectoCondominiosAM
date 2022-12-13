@@ -1,0 +1,75 @@
+﻿@using ProyectoCondominios.Models
+@model ModeloBase
+@{
+    ViewData["Title"] = "Oficial de Seguridad";
+    var oficiales = (List<OficialDeSeguridad>)Model.Datos;
+}
+
+<div class="text-center">
+    <h4>Oficial de Seguridad</h4>
+</div>
+@if (!string.IsNullOrEmpty(Model.Error.Error))
+{
+    <br />
+    <div class="alert alert-danger" role="alert">
+        @Model.Error.Error
+    </div>
+}
+else
+{
+    <div class="row-cols-12">
+        <input type="button"
+           value="+ Agregar"
+           class="btn btn-success"
+           onclick="location.href='@Url.Action("AgregarOEditar", "OficialDeSeguridad")'" />
+    </div>
+    <div class="text-center">
+        @if (oficiales != null && oficiales.Count > 0)
+        {
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Usuario</th>
+                        <th scope="col">Resetear Contraseña</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in oficiales)
+                    {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Nombre</td>
+                            <td>@item.Usuario</td>
+                            <td>
+                                @Html.CheckBox("resetconstrasena", item.ResetearContrasena, new { @disabled = "disabled" })
+                            </td>
+                            <td>
+                                <input type="button"
+                                   value="Editar"
+                                   class="btn btn-warning"
+                                   onclick="location.href='@Url.Action("AgregarOEditar", "OficialDeSeguridad", new { id = item.Id})'" />
+                            </td>
+                            <td>
+                                <input type="button"
+                                   value="Eliminar"
+                                   class="btn btn-danger"
+                                   onclick="location.href='@Url.Action("Eliminar", "OficialDeSeguridad", new { id = item.Id})'" />
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <br />
+            <div class="alert alert-warning" role="alert">
+                No existen elementos para mostrar.
+            </div>
+        }
+    </div>
+}

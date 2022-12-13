@@ -1,0 +1,95 @@
+﻿@using ProyectoCondominios.Models
+@model ModeloBase
+@{
+    ViewData["Title"] = "Condóminos";
+    var condominos = (List<Condominos>)Model.Datos;
+}
+
+<div class="text-center">
+    <h4>Condóminos</h4>
+</div>
+@if (!string.IsNullOrEmpty(Model.Error.Error))
+{
+    <br />
+    <div class="alert alert-danger" role="alert">
+        @Model.Error.Error
+    </div>
+}
+else
+{
+    <div class="row-cols-12">
+        <input type="button"
+           value="+ Agregar"
+           class="btn btn-success"
+           onclick="location.href='@Url.Action("AgregarOEditar", "Condominos")'" />
+    </div>
+    <br />
+    <div class="text-center">
+        @if ((condominos != null && condominos.Count > 0) || Model.Buscando)
+        {
+            <div class="row">
+                @using (Html.BeginForm("Buscar", "Condominos", FormMethod.Post))
+                {
+                    <div class="col-11" style="float:left;">
+                        @Html.TextBox("palabraClave", null, new { @class = "form-control", placeholder="Buscar por Cédula, Nombre, Teléfono ó Email"})
+                    </div>
+                    <div style="float:right;">
+                        <input type="submit" class="btn btn-success" value="Buscar" />
+                    </div>
+                }
+            </div>
+            <br />
+        }
+
+        @if (condominos != null && condominos.Count > 0)
+        {
+            
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Cédula</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Teléfonos</th>
+                        <th scope="col">Email</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in condominos)
+                    {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Cedula</td>
+                            <td>@item.Nombre</td>
+                            <td>@item.Telefonos</td>
+                            <td>@item.Email</td>
+                            <td>
+                                <input type="button"
+                           value="Editar"
+                           class="btn btn-warning"
+                           onclick="location.href='@Url.Action("AgregarOEditar", "Condominos", new { id = item.Id})'" />
+                            </td>
+                            <td>
+                                <input type="button"
+                           value="Eliminar"
+                           class="btn btn-danger"
+                           onclick="location.href='@Url.Action("Eliminar", "Condominos", new { id = item.Id})'" />
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <br />
+            <div class="alert alert-warning" role="alert">
+                No existen elementos para mostrar.
+            </div>
+        }
+    </div>
+}
+
+

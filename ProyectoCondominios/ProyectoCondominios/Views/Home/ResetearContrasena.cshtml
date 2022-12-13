@@ -1,0 +1,34 @@
+﻿@model ModeloBase
+@{
+    ViewData["Title"] = "Cambio de Contraseña";
+    var datos = (UsuarioActivo)Model.Objeto;
+}
+<div class="text-center">
+    <h4>Cambio de Contraseña</h4>
+</div>
+@using (Html.BeginForm("ResetearContraseña", "Home", FormMethod.Post))
+{
+    <div class="row">
+        @Html.Hidden("Id", datos.Id)
+        <div class="row">
+            <label style="float: left;">Contraseña:</label>
+            @Html.Password("Contrasena", null, new { @class = "form-control col-md-6", placeholder="Contraseña", style="float: right;"})
+        </div>
+        <div class="row">
+            <label style="float: left;">Confirma Contraseña:</label>
+            @Html.Password("ConfirmarContrasena", null, new { @class = "form-control", placeholder="Confirma Contraseña", style="float: right;"})
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <input type="submit" class="btn btn-success" value="Aceptar" />
+    </div>
+}
+
+@if (Model.Error != null && !string.IsNullOrEmpty(Model.Error.Error))
+{
+    <br />
+    <div class="alert alert-danger" role="alert">
+        @Model.Error.Error
+    </div>
+}

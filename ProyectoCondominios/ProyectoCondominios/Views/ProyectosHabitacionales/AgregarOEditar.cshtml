@@ -1,0 +1,79 @@
+﻿@model ProyectosHabitacionales
+@{
+    ViewData["Title"] = "Agregar o Editar";
+}
+
+@using (Html.BeginForm("Guardar", "ProyectosHabitacionales", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="text-center">
+        <div class="row col-12">
+            @if (Model.Id == 0)
+            {
+                <h4>Agregar Proyecto Habitacional</h4>
+            }
+            else
+            {
+                <h4>Editar Proyecto Habitacional</h4>
+            }
+        </div>
+    </div>
+    @Html.HiddenFor(m => m.Id)
+    @Html.HiddenFor(m => m.Logo)
+    <div class="row">
+        <label>Logo:</label>
+        @{
+            string etiquetaFoto = string.Empty;
+            if (Model.Id == 0)
+            {
+                etiquetaFoto = "Agregar logo";
+            }
+            else
+            {
+                etiquetaFoto = "Actualizar logo";
+            }
+            <input class="form-control"
+               value="@etiquetaFoto"
+               asp-for="Archivo" />
+
+            if (Model.Logo != null)
+            {
+                var base64foto = Convert.ToBase64String(Model.Logo);
+                var foto = String.Format("data:image/png;base64,{0}", base64foto);
+                <br />
+                <img src="@foto" style="width:200px; height:200px"/>
+            }
+        }
+    </div>
+    <div class="row">
+        <label style="float: left;">Código:</label>
+        @Html.TextBoxFor(m => m.Codigo, null, new { @class = "form-control col-md-6", placeholder="Código", style="float: right;"})
+    </div>
+    <div class="row">
+        <label style="float: left;">Nombre:</label>
+        @Html.TextBoxFor(m => m.Nombre,  null, new { @class = "form-control", placeholder="Nombre", style="float: right;"})
+    </div>
+    <div class="row">
+        <label style="float: left;">Dirección:</label>
+        @Html.TextBoxFor(m => m.Direccion,  null, new { @class = "form-control col-md-6", placeholder="Dirección", style="float: right;"})
+    </div>
+    <div class="row">
+        <label style="float: left;">Teléfono Oficina:</label>
+        @Html.TextBoxFor(m => m.TelefonoOficina,  null, new { @class = "form-control col-md-6", placeholder="Teléfono Oficina", style="float: right;"})
+    </div>
+    <br />
+    <div class="row">
+        @{
+            string etiqueta = string.Empty;
+
+            if (Model.Id == 0)
+            {
+                etiqueta = "Crear";
+            }
+            else
+            {
+                etiqueta = "Guardar";
+            }
+        }
+        <input type="submit" class="btn btn-success" value="@etiqueta" />
+    </div>
+}

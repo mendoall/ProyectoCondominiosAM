@@ -1,0 +1,59 @@
+﻿@using ProyectoCondominios.Models
+@model ModeloBase
+@{
+    ViewData["Title"] = "Visitas Rápidas";
+    var datos = (VisitaRapida)Model.Objeto;
+    var lista = (List<VisitaRapida>)Model.Datos;
+}
+<div class="text-center">
+    <h4>Visitas Rápidas</h4>
+</div>
+@using (Html.BeginForm("Guardar", "VisitaRapida", FormMethod.Post))
+{
+    @Html.DropDownList("TipoVisitaId",
+            datos.TipoDeVisitaRapida,
+            "Selecione un Tipo de Visita Rapida")
+
+
+    <input type="submit" class="btn btn-success" value="Asignar" />
+}
+
+@if (!string.IsNullOrEmpty(Model.Error.Error))
+{
+    <br />
+    <div class="alert alert-danger" role="alert">
+        @Model.Error.Error
+    </div>
+}
+
+<div class="text-center">
+    @if (lista != null && lista.Count > 0)
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Fecha</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in lista)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Nombre</td>
+                        <td>@item.FechaVisita</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <br />
+        <div class="alert alert-warning" role="alert">
+            No existen elementos para mostrar.
+        </div>
+    }
+</div>

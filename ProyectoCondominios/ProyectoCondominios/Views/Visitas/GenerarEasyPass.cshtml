@@ -1,0 +1,53 @@
+﻿@using ProyectoCondominios.Models
+@model EasyPass
+@{
+    ViewData["Title"] = "Generar Easy Pass";
+}
+
+@using (Html.BeginForm("CompartirEasyPass", "Visitas", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="text-center">
+        <div class="row col-12">
+            <h4>Generar Easy Pass</h4>
+        </div>
+    </div>
+    @Html.HiddenFor(m => m.Id)   
+    @Html.HiddenFor(m => m.Codigo)
+    @Html.HiddenFor(m => m.FechaExpiracion)
+    @Html.HiddenFor(m => m.Foto)
+    @Html.HiddenFor(m => m.CondominoId)
+    <div class="row">
+        <br />
+        <label style="float: left;">Su código QR para la visita ha sido generado satisfactoriamente.</label>
+        <label style="float: left;">Código QR:.</label>
+        @if (Model.Foto != null)
+        {
+            var base64foto = Convert.ToBase64String(Model.Foto);
+            var foto = String.Format("data:image/png;base64,{0}", base64foto);
+            <br />
+            <img src="@foto" style="width:200px; height:200px" />
+        }
+        <label style="float: left;">Su código de 4 dígitos es:</label>
+        <label style="float: left;"><b>@Model.Codigo</b></label>
+        <label style="float: left;">La fecha de expiración es:</label>
+        <label style="float: left;"><b>@Model.FechaExpiracion</b></label>
+        <br />
+        <label style="float: left;">Puede capturar o tomar una foto de su código QR y presionar cancelar. Ó si desea compartir su código digite el email y presione compartir.</label>
+        <label style="float: left;">Email:</label>
+        @Html.TextBoxFor(m => m.Email, null, new { @class = "form-control col-md-6", placeholder="Email", style="float: right;"})
+    </div>    
+    <br />
+    <input type="submit" class="btn btn-success" value="Compartir" />
+    <input type="button"
+       value="Cancelar"
+       class="btn btn-danger"
+       onclick="location.href='@Url.Action("Index", "Visitas")'" />
+}
+
+@if (Model.Error != null && !string.IsNullOrEmpty(Model.Error.Error))
+{
+    <br />
+    <div class="alert alert-danger" role="alert">
+        @Model.Error.Error
+    </div>
+}

@@ -1,0 +1,55 @@
+﻿@using ProyectoCondominios.Models
+@model OficialDeSeguridad
+@{
+    ViewData["Title"] = "Agregar o Editar";
+}
+
+@using (Html.BeginForm("Guardar", "OficialDeSeguridad", FormMethod.Post))
+{
+    <div class="text-center">
+        <div class="row col-12">
+            @if (Model.Id == 0)
+            {
+                <h4>Agregar Oficial de Seguridad</h4>
+            }
+            else
+            {
+                <h4>Editar Oficial de Seguridad</h4>
+            }
+        </div>
+    </div>
+    @Html.HiddenFor(m => m.Id)
+    @Html.HiddenFor(m => m.TipoUsuarioId)
+    @Html.HiddenFor(m => m.Contrasena)
+    <div class="row">
+        <label style="float: left;">Nombre:</label>
+        @Html.TextBoxFor(m => m.Nombre, null, new { @class = "form-control col-md-6", placeholder="Nombre", style="float: right;"})
+    </div>
+    <div class="row">
+        <label style="float: left;">Usuario:</label>
+        @Html.TextBoxFor(m => m.Usuario,  null, new { @class = "form-control", placeholder="Usuario", style="float: right;"})
+    </div>
+    @if (Model.Id != 0)
+    {
+        <div class="row">
+            <label style="float: left;">Resetear Contraseña:</label>
+            @Html.CheckBoxFor(m => m.ResetearContrasena)
+        </div>
+    }
+    <br />
+    <div class="row">
+        @{
+            string etiqueta = string.Empty;
+
+            if (Model.Id == 0)
+            {
+                etiqueta = "Crear";
+            }
+            else
+            {
+                etiqueta = "Guardar";
+            }
+        }
+        <input type="submit" class="btn btn-success" value="@etiqueta" />
+    </div>
+}

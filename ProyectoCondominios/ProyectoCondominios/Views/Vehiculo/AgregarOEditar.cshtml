@@ -1,0 +1,54 @@
+﻿@using ProyectoCondominios.Models
+@model Vehiculo
+@{
+    ViewData["Title"] = "Agregar o Editar";
+}
+
+@using (Html.BeginForm("Guardar", "Vehiculo", FormMethod.Post))
+{
+    <div class="text-center">
+        <div class="row col-12">
+            @if (Model.Id == null || Model.Id == 0)
+            {
+                <h4>Agregar Visita</h4>
+            }
+            else
+            {
+                <h4>Editar Visita</h4>
+            }
+        </div>
+    </div>
+    @Html.HiddenFor(m => m.Id)    
+    <div class="row">
+        <label style="float: left;">Placa:</label>
+        @Html.TextBoxFor(m => m.Placa, null, new { @class = "form-control col-md-6", placeholder="Placa", style="float: right;"})
+    </div>
+    <div class="row">
+        <label style="float: left;">Marca:</label>
+        @Html.TextBoxFor(m => m.Marca,  null, new { @class = "form-control", placeholder="Marca", style="float: right;"})
+    </div>
+    <div class="row">
+        <label style="float: left;">Modelo:</label>
+        @Html.TextBoxFor(m => m.Modelo,  null, new { @class = "form-control col-md-6", placeholder="Modelo", style="float: right;"})
+    </div>
+    <div class="row">
+        <label style="float: left;">Color:</label>
+        @Html.TextBoxFor(m => m.Color,  null, new { @class = "form-control col-md-6", placeholder="Color", style="float: right;"})
+    </div>
+    <br />
+    <div class="row">
+        @{
+            string etiqueta = string.Empty;
+
+            if (Model.Id == null || Model.Id == 0)
+            {
+                etiqueta = "Crear";
+            }
+            else
+            {
+                etiqueta = "Guardar";
+            }
+        }
+        <input type="submit" class="btn btn-success" value="@etiqueta" />
+    </div>
+}

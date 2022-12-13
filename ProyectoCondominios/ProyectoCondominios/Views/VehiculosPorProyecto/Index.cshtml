@@ -1,0 +1,74 @@
+﻿@using ProyectoCondominios.Models
+@model ModeloBase
+@{
+    ViewData["Title"] = "Vehículos de libre accesso";
+    var vehiculos = (List<Vehiculo>)Model.Datos;
+}
+
+<div class="text-center">
+    <h4>Vehículos de libre accesso</h4>
+</div>
+@if (!string.IsNullOrEmpty(Model.Error.Error))
+{
+    <br />
+    <div class="alert alert-danger" role="alert">
+        @Model.Error.Error
+    </div>
+}
+else
+{      
+    <div class="text-center">
+        @if ((vehiculos != null && vehiculos.Count > 0) || Model.Buscando)
+        {
+            <div class="row">
+                @using (Html.BeginForm("Buscar", "VehiculosPorProyecto", FormMethod.Post))
+                {
+                    <div class="col-11" style="float:left;">
+                        @Html.TextBox("palabraClave", null, new { @class = "form-control", placeholder="Buscar por placa"})
+                    </div>
+                    <div style="float:right;">
+                        <input type="submit" class="btn btn-success" value="Buscar" />
+                    </div>
+                }
+            </div>
+            <br />
+        }
+
+        @if (vehiculos != null && vehiculos.Count > 0)
+        {
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Placa</th>
+                        <th scope="col">Marca</th>
+                        <th scope="col">Modelo</th>
+                        <th scope="col">Color</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in vehiculos)
+                    {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Placa</td>
+                            <td>@item.Marca</td>
+                            <td>@item.Modelo</td>
+                            <td>@item.Color</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <br />
+            <div class="alert alert-warning" role="alert">
+                No existen elementos para mostrar.
+            </div>
+        }
+    </div>
+}
+
+

@@ -1,0 +1,69 @@
+﻿@using ProyectoCondominios.Models
+@model ModeloBase
+@{
+    ViewData["Title"] = "Condóminos por Proyecto";
+    var datos = (CondominosPorProyecto)Model.Objeto;
+    var lista = (List<CondominosPorProyecto>)Model.Datos;
+}
+<div class="text-center">
+    <h4>Condóminos por Proyecto</h4>
+</div>
+@using (Html.BeginForm("Guardar", "CondominosPorProyecto", FormMethod.Post))
+{
+    @Html.DropDownList("CondominoId",
+            datos.Condominos,
+            "Selecione un Condómino")
+
+    @Html.DropDownList("ProyectoId",
+            datos.Proyectos,
+            "Selecione un Proyecto")
+
+    <input type="submit" class="btn btn-success" value="Asignar" />
+}
+
+@if (!string.IsNullOrEmpty(Model.Error.Error))
+{
+    <br />
+    <div class="alert alert-danger" role="alert">
+        @Model.Error.Error
+    </div>
+}
+
+<div class="text-center">
+    @if (lista != null && lista.Count > 0)
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Proyecto</th>
+                    <th scope="col">Condomino</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in lista)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Proyecto</td>
+                        <td>@item.Condomino</td>
+                        <td>
+                            <input type="button"
+                           value="Eliminar"
+                           class="btn btn-danger"
+                           onclick="location.href='@Url.Action("Eliminar", "CondominosPorProyecto", new { id = item.Id})'" />
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <br />
+        <div class="alert alert-warning" role="alert">
+            No existen elementos para mostrar.
+        </div>
+    }
+</div>

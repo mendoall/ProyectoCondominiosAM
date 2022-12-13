@@ -1,0 +1,40 @@
+﻿@model ErrorViewModel
+@{
+    ViewData["Title"] = "Inicio de Sesion";
+}
+
+<div class="text-center">    
+    @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+    {
+        <table>
+            <tbody>
+                <tr>
+                    <td style="width:30%;"></td>
+                    <td>
+                        <h1 class="display-4">Bienvenido</h1>
+                        <div class="row">
+                            <label>Usuario:</label>
+                            @Html.TextBox("usuario", null, new { @class = "form-control col-md-6", placeholder="Usuario", style="float: right; text-align: center;"})
+
+                            <label>Contraseña:</label>
+                            @Html.Password("contrasena", null, new { @class = "form-control", placeholder="Contraseña", style="float: right; text-align: center;"})
+                        </div>
+                        <br />
+                        <input type="submit" class="btn btn-success" value="Iniciar Sesion" />
+                    </td>
+                    <td style="width:30%;"></td>
+                </tr>
+            </tbody>
+        </table>
+    }
+
+    @if (!string.IsNullOrEmpty(Model.Error))
+    {
+        <br />
+        <div class="alert alert-danger" role="alert">
+            @Model.Error
+        </div>
+    }
+</div>
+
+

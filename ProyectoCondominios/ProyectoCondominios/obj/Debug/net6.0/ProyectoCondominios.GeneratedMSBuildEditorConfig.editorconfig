@@ -1,0 +1,124 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = ProyectoCondominios
+build_property.RootNamespace = ProyectoCondominios
+build_property.ProjectDir = C:\Users\ajmdz\OneDrive\Escritorio\Universidad\Bases de Datos II\Proyecto Final\FrontEnd\ProyectoCondominios\ProyectoCondominios\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\ajmdz\OneDrive\Escritorio\Universidad\Bases de Datos II\Proyecto Final\FrontEnd\ProyectoCondominios\ProyectoCondominios
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/ajmdz/OneDrive/Escritorio/Universidad/Bases de Datos II/Proyecto Final/FrontEnd/ProyectoCondominios/ProyectoCondominios/Views/CondominosPorProyecto/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZG9taW5vc1BvclByb3llY3RvXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ajmdz/OneDrive/Escritorio/Universidad/Bases de Datos II/Proyecto Final/FrontEnd/ProyectoCondominios/ProyectoCondominios/Views/Condominos/AgregarOEditar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZG9taW5vc1xBZ3JlZ2FyT0VkaXRhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ajmdz/OneDrive/Escritorio/Universidad/Bases de Datos II/Proyecto Final/FrontEnd/ProyectoCondominios/ProyectoCondominios/Views/Condominos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZG9taW5vc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ajmdz/OneDrive/Escritorio/Universidad/Bases de Datos II/Proyecto Final/FrontEnd/ProyectoCondominios/ProyectoCondominios/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ajmdz/OneDrive/Escritorio/Universidad/Bases de Datos II/Proyecto Final/FrontEnd/ProyectoCondominios/ProyectoCondominios/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ajmdz/OneDrive/Escritorio/Universidad/Bases de Datos II/Proyecto Final/FrontEnd/ProyectoCondominios/ProyectoCondominios/Views/Home/ResetearContrasena.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZXNldGVhckNvbnRyYXNlbmEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ajmdz/OneDrive/Escritorio/Universidad/Bases de Datos II/Proyecto Final/FrontEnd/ProyectoCondominios/ProyectoCondominios/Views/Home/SeleccionarCondominos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTZWxlY2Npb25hckNvbmRvbWlub3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ajmdz/OneDrive/Escritorio/Universidad/Bases de Datos II/Proyecto Final/FrontEnd/ProyectoCondominios/ProyectoCondominios/Views/Home/SeleccionarProyectoHabitacional.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTZWxlY2Npb25hclByb3llY3RvSGFiaXRhY2lvbmFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ajmdz/OneDrive/Escritorio/Universidad/Bases de Datos II/Proyecto Final/FrontEnd/ProyectoCondominios/ProyectoCondominios/Views/OficialDeSeguridad/AgregarOEditar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2ZpY2lhbERlU2VndXJpZGFkXEFncmVnYXJPRWRpdGFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ajmdz/OneDrive/Escritorio/Universidad/Bases de Datos II/Proyecto Final/FrontEnd/ProyectoCondominios/ProyectoCondominios/Views/OficialDeSeguridad/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2ZpY2lhbERlU2VndXJpZGFkXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ajmdz/OneDrive/Escritorio/Universidad/Bases de Datos II/Proyecto Final/FrontEnd/ProyectoCondominios/ProyectoCondominios/Views/ProyectosHabitacionales/AgregarOEditar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJveWVjdG9zSGFiaXRhY2lvbmFsZXNcQWdyZWdhck9FZGl0YXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ajmdz/OneDrive/Escritorio/Universidad/Bases de Datos II/Proyecto Final/FrontEnd/ProyectoCondominios/ProyectoCondominios/Views/ProyectosHabitacionales/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJveWVjdG9zSGFiaXRhY2lvbmFsZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ajmdz/OneDrive/Escritorio/Universidad/Bases de Datos II/Proyecto Final/FrontEnd/ProyectoCondominios/ProyectoCondominios/Views/RegistroDeVisitas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0cm9EZVZpc2l0YXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ajmdz/OneDrive/Escritorio/Universidad/Bases de Datos II/Proyecto Final/FrontEnd/ProyectoCondominios/ProyectoCondominios/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ajmdz/OneDrive/Escritorio/Universidad/Bases de Datos II/Proyecto Final/FrontEnd/ProyectoCondominios/ProyectoCondominios/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ajmdz/OneDrive/Escritorio/Universidad/Bases de Datos II/Proyecto Final/FrontEnd/ProyectoCondominios/ProyectoCondominios/Views/VehiculosPorProyecto/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWN1bG9zUG9yUHJveWVjdG9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ajmdz/OneDrive/Escritorio/Universidad/Bases de Datos II/Proyecto Final/FrontEnd/ProyectoCondominios/ProyectoCondominios/Views/Vehiculo/AgregarOEditar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWN1bG9cQWdyZWdhck9FZGl0YXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ajmdz/OneDrive/Escritorio/Universidad/Bases de Datos II/Proyecto Final/FrontEnd/ProyectoCondominios/ProyectoCondominios/Views/Vehiculo/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWN1bG9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ajmdz/OneDrive/Escritorio/Universidad/Bases de Datos II/Proyecto Final/FrontEnd/ProyectoCondominios/ProyectoCondominios/Views/VisitaRapida/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlzaXRhUmFwaWRhXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ajmdz/OneDrive/Escritorio/Universidad/Bases de Datos II/Proyecto Final/FrontEnd/ProyectoCondominios/ProyectoCondominios/Views/VisitasFavoritas/AgregarOEditar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlzaXRhc0Zhdm9yaXRhc1xBZ3JlZ2FyT0VkaXRhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ajmdz/OneDrive/Escritorio/Universidad/Bases de Datos II/Proyecto Final/FrontEnd/ProyectoCondominios/ProyectoCondominios/Views/VisitasFavoritas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlzaXRhc0Zhdm9yaXRhc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ajmdz/OneDrive/Escritorio/Universidad/Bases de Datos II/Proyecto Final/FrontEnd/ProyectoCondominios/ProyectoCondominios/Views/Visitas/AgregarOEditar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlzaXRhc1xBZ3JlZ2FyT0VkaXRhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ajmdz/OneDrive/Escritorio/Universidad/Bases de Datos II/Proyecto Final/FrontEnd/ProyectoCondominios/ProyectoCondominios/Views/Visitas/GenerarEasyPass.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlzaXRhc1xHZW5lcmFyRWFzeVBhc3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ajmdz/OneDrive/Escritorio/Universidad/Bases de Datos II/Proyecto Final/FrontEnd/ProyectoCondominios/ProyectoCondominios/Views/Visitas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlzaXRhc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ajmdz/OneDrive/Escritorio/Universidad/Bases de Datos II/Proyecto Final/FrontEnd/ProyectoCondominios/ProyectoCondominios/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ajmdz/OneDrive/Escritorio/Universidad/Bases de Datos II/Proyecto Final/FrontEnd/ProyectoCondominios/ProyectoCondominios/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ajmdz/OneDrive/Escritorio/Universidad/Bases de Datos II/Proyecto Final/FrontEnd/ProyectoCondominios/ProyectoCondominios/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-8hs9k34jkk

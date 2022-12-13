@@ -1,0 +1,74 @@
+﻿@using ProyectoCondominios.Models
+@model ModeloBase
+@{
+    ViewData["Title"] = "Registro de Visitas";
+    var visitas = (List<Visitas>)Model.Datos;
+}
+
+<div class="text-center">
+    <h4>Registro de Visitas</h4>
+</div>
+@if (!string.IsNullOrEmpty(Model.Error.Error))
+{
+    <br />
+    <div class="alert alert-danger" role="alert">
+        @Model.Error.Error
+    </div>
+}
+else
+{    
+    <br />
+    <div class="text-center">
+        @if ((visitas != null && visitas.Count > 0) || Model.Buscando)
+        {
+            <div class="row">
+                @using (Html.BeginForm("Buscar", "RegistroDeVisitas", FormMethod.Post))
+                {
+                    <div class="col-11" style="float:left;">
+                        @Html.TextBox("palabraClave", null, new { @class = "form-control", placeholder="Buscar por Cédula, Nombre ó Vehículo"})
+                    </div>
+                    <div style="float:right;">
+                        <input type="submit" class="btn btn-success" value="Buscar" />
+                    </div>
+                }
+            </div>
+            <br />
+        }
+        @if (visitas != null && visitas.Count > 0)
+        {
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Cédula</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Vehículo</th>
+                        <th scope="col">Fecha Visita</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in visitas)
+                    {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Cedula</td>
+                            <td>@item.Nombre</td>
+                            <td>@item.Vehiculo</td>
+                            <td>@item.FechaVisita</td>                            
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <br />
+            <div class="alert alert-warning" role="alert">
+                No existen elementos para mostrar.
+            </div>
+        }
+    </div>
+}
+
+
+

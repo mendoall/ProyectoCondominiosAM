@@ -1,0 +1,91 @@
+﻿@model ModeloBase
+@{
+    ViewData["Title"] = "Proyectos Habitacionales";
+    var proyectos = (List<ProyectosHabitacionales>)Model.Datos;
+}
+
+<div class="text-center">
+    <h4>Proyectos Habitacionales</h4>
+</div>
+@if (!string.IsNullOrEmpty(Model.Error.Error))
+{
+    <br />
+    <div class="alert alert-danger" role="alert">
+        @Model.Error.Error
+    </div>
+}
+else
+{
+    <div class="row-cols-12">
+        <input type="button"
+           value="+ Agregar"
+           class="btn btn-success"
+           onclick="location.href='@Url.Action("AgregarOEditar", "ProyectosHabitacionales")'" />
+    </div>
+    <br />
+    <div class="text-center">
+        @if ((proyectos != null && proyectos.Count > 0) || Model.Buscando)
+        {
+            <div class="row">
+                @using (Html.BeginForm("Buscar", "ProyectosHabitacionales", FormMethod.Post))
+                {
+                    <div class="col-11" style="float:left;">
+                        @Html.TextBox("palabraClave", null, new { @class = "form-control", placeholder="Buscar por Nombre, Código, Dirección ó Teléfono"})
+                    </div>
+                    <div style="float:right;">
+                        <input type="submit" class="btn btn-success" value="Buscar" />
+                    </div>
+                }
+            </div>
+            <br />
+        }
+        @if (proyectos != null && proyectos.Count > 0)
+        {            
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Código</th>
+                        <th scope="col">Dirección</th>
+                        <th scope="col">Teléfono Oficina</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in proyectos)
+                    {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Nombre</td>
+                            <td>@item.Codigo</td>
+                            <td>@item.Direccion</td>
+                            <td>@item.TelefonoOficina</td>
+                            <td>
+                                <input type="button"
+                                   value="Editar"
+                                   class="btn btn-warning"
+                                   onclick="location.href='@Url.Action("AgregarOEditar", "ProyectosHabitacionales", new { id = item.Id})'" />
+                            </td>
+                            <td>
+                                <input type="button"
+                                   value="Eliminar"
+                                   class="btn btn-danger"
+                                   onclick="location.href='@Url.Action("Eliminar", "ProyectosHabitacionales", new { id = item.Id})'" />
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else {
+            <br />
+            <div class="alert alert-warning" role="alert">
+                No existen elementos para mostrar.
+            </div>
+        }
+    </div>
+}
+
+
